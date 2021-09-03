@@ -61,7 +61,7 @@ session_start();
     <body>
         <div class="login-container">
             <form action="" method="POST" class="login-email">
-                <img src="images/sd.png">
+                <img class="img" src="images/sd.png">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
                 <div class="input-group">
                     <input type="email" placeholder="Email" name="email">

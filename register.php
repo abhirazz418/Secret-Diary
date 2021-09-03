@@ -18,9 +18,9 @@ session_start();
 
             $user_id = random_num(20);
             $query = "INSERT into users (user_id, f_name, l_name, gender, email, password) VALUES ('$user_id', '$f_name', '$l_name', '$gender', '$email', '$password')";
-            
+            $query1 = "insert into tbl_past (user_id) VALUES ('$user_id')";
             mysqli_query($con, $query);
-
+            mysqli_query($con, $query1);
             header("Location: login.php");
             die;
         }
@@ -48,7 +48,7 @@ session_start();
     <body>
         <div class="container">
             <form action="" method="POST" class="login-email">
-                <img src="images/sd.png">
+                <img class="img" src="images/sd.png">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Sign Up</p>
                 <div class="input-group">
                     <input type="text" placeholder="First name" name="f_name" >

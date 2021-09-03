@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+}
+
+.container .textarea img{
+    width: 50%;
+}
+
+.container .textarea .input-group{
+    width: 100%;
+    height: 2rem;
+}
+
+.container .post .input-group .btn{
+    margin-left: 80%;
+    width: auto;
+    text-align: center;
+    border: none;
+    background-color: #a29bfe;
+    border-radius: 4.5rem;
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .post .input-group .btn a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container .post .input-group .btn:hover {
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+
+.container{
+    width: 100%;
+    max-height: 55rem;
+    background-color: aliceblue;
+    opacity: 80%;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 .75rem rgba(0,0,0,.5);
+    padding: 2rem 2rem;
+}
+
+.container .post .post_area textarea{
+    min-width: 100%;
+    min-height: 40rem;
+}
+
+.container .post .input-group .btn-1{
+    margin-right: 80%;
+    width: auto;
+    padding: 0rem 1rem;
+    text-align: center;
+    border: none;
+    background-color: #a29bfe;
+    border-radius: 4.5rem;
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .post .input-group .btn-1:hover {
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}

@@ -5,34 +5,55 @@ session_start();
     include("dbcon.php");
     include("functions.php");
 
+    $user_data = check_login($con);
+    $user_id = $user_data['user_id'];
+
     if($user_data = check_login($con))
     {
-        $user_id = $user_data['user_id'];
+        
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $diary = $_POST['diary'];
-
-            if(!empty($diary) && !empty($user_data['user_id']))
+            if($y = !empty($diary) && !empty($user_id))
             {
-                $query = "UPDATE table SET diary=".$diary."WHERE user_id =".$user_data['user_id'];
+                $query = "UPDATE users SET diary='$diary' WHERE user_id = '$user_id' ";
                 mysqli_query($con, $query);
+                echo "<script>alert('Wow...!, Secert Diary created')</script>";
                 header("Location: index.php");
                 die;
             }
-            else
-            {   
-
-                header("Location: login.php");
-                die;
-
-            }
-
         }
+    }
     else
     {
         header("Location: login.php");
         die;
     }
+
+    /*if(isset($_SESSION['user_id']))
+    {
+
+        $id = $_SESSION['user_id'];
+        echo "Hello";
+        if($_SERVER['REQUEST_METHOD'] == "POST")
+        {
+            $diary = $_POST['diary'];
+
+            if(!empty($diary) && !empty($id))
+            {
+                $query = "UPDATE 'users' set diary = '$diary' where user_id='$id'";
+                mysqli_query($con, $query);
+                echo "<script>alert('Please enter some valid information...!')</script>";
+                header("Location: index.php");
+                die;
+            }
+        }
+    }
+    else
+    {
+        header("Location: login.php");
+        die;
+    }*/
 ?>
 
 
@@ -56,12 +77,11 @@ session_start();
                 <div class="post_area">
                     <textarea name="diary" id="" ></textarea>
                 </div>
+                <br>
                 <div class="input-group">
                     <button name="submit" class="btn-1">Save</button>
                 </div>
             </form>
         </div>
     </body>
-</html><?php
-    }
-    ?>
+</html>

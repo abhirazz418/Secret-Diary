@@ -28,13 +28,13 @@ body{
 }
 
 .container .post .input-group .btn{
-    margin-left: 80%;
+    margin-left: 90%;
     width: auto;
     text-align: center;
     border: none;
     background-color: #a29bfe;
     border-radius: 4.5rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #fff;
     cursor: pointer;
     transition: .3s;

@@ -11,3 +11,5 @@ if(!$con)
 {
     die("failed to connect!");
 }
+
+?>

@@ -16,7 +16,6 @@ session_start();
             $query = "select * from users where email = '$email' limit 1";
             
             $result = mysqli_query($con, $query);
-            echo "<script>alert('Hi')</script>";
             if ($result)
             {
                 
@@ -25,10 +24,10 @@ session_start();
 
                     $user_data = mysqli_fetch_assoc($result);
                     
-                    if($user_data['password'] === $password)
+                    if($user_data['password'] == $password)
                     {
                         $_SESSION['user_id'] = $user_data['user_id'];
-                        header("Location: Index.php");
+                        header("Location: index.php");
                         die;
                     }
 

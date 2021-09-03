@@ -18,10 +18,8 @@ session_start();
 
             $user_id = random_num(20);
             $query = "INSERT into users (user_id, f_name, l_name, gender, email, password) VALUES ('$user_id', '$f_name', '$l_name', '$gender', '$email', '$password')";
-            $query1 = "insert into tbl_past (user_id) VALUES ('$user_id')";
             mysqli_query($con, $query);
-            mysqli_query($con, $query1);
-            header("Location: login.php");
+            header("Location: index.php");
             die;
         }
         else
